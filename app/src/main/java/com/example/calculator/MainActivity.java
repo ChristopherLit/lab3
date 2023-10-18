@@ -13,7 +13,7 @@ public class MainActivity extends AppCompatActivity {
 
     private enum Operator {none, add, sub, mul, div, eq}
 
-    private double data01 = 0, data02 = 0;
+    private double data01 = 1, data02 = 0;
 
     private Operator opp = Operator.none;
 
@@ -142,7 +142,7 @@ public class MainActivity extends AppCompatActivity {
 
             } else if (opp == Operator.div) {
 
-                if (data01 == 0) {
+                if (data02 == 0) {
 
                     resultText.setText("ERROR");
 
