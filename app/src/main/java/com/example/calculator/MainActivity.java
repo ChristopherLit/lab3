@@ -86,21 +86,21 @@ public class MainActivity extends AppCompatActivity {
     public void onClickFunctionButton(View view) {
 
         data01 = Double.parseDouble(resultText.getText().toString());
-        Log.d("test", "WORKS!");
-        if (opp == Operator.add) {
+        int pressID = view.getId();
+        if (pressID == R.id.buttonPlus) {
 
             data02 += data01;
 
 
-        } else if (opp == Operator.sub) {
+        } else if (pressID == R.id.buttonMinus) {
 
             data02 = data02 - data01;
 
-        } else if (opp == Operator.mul) {
+        } else if (pressID == R.id.buttonMul) {
 
             data02 = data02 * data01;
 
-        } else if (opp == Operator.div) {
+        } else if (pressID == R.id.buttonDiv) {
 
             if (data01 == 0) {
 
@@ -113,7 +113,7 @@ public class MainActivity extends AppCompatActivity {
             }
 
 
-        } else if (opp == Operator.eq) {
+        } else if (pressID == R.id.buttonEq) {
 
             resultText.setText(data02 + "");
         }
