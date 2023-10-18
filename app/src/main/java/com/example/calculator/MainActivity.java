@@ -3,6 +3,7 @@ package com.example.calculator;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
@@ -85,7 +86,7 @@ public class MainActivity extends AppCompatActivity {
     public void onClickFunctionButton(View view) {
 
         data01 = Double.parseDouble(resultText.getText().toString());
-
+        Log.d("test", "WORKS!");
         if (opp == Operator.add) {
 
             data02 += data01;
