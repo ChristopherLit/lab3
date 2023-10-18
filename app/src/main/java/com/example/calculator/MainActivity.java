@@ -162,5 +162,18 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-}
+    public void onClickClearButton(View view) {
+
+        data01 = 0;
+        data02 = 0;
+
+        opp = Operator.none;
+
+        resultText.setText("");
+
+
+    }
+    }
+
+
 
