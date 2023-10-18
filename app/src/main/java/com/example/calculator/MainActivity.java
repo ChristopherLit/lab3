@@ -85,20 +85,31 @@ public class MainActivity extends AppCompatActivity {
 
     public void onClickFunctionButton(View view) {
 
-        data01 = Double.parseDouble(resultText.getText().toString());
+
         int pressID = view.getId();
+        //none, add, sub, mul, div, eq
         if (pressID == R.id.buttonPlus) {
 
-            data02 += data01;
+            opp = Operator.add;
+            data01 = Double.parseDouble(resultText.getText().toString());
 
+            resultText.setText("");
 
         } else if (pressID == R.id.buttonMinus) {
 
-            data02 = data02 - data01;
+            opp = Operator.sub;
+            data01 = Double.parseDouble(resultText.getText().toString());
+
+
+            resultText.setText("");
 
         } else if (pressID == R.id.buttonMul) {
 
-            data02 = data02 * data01;
+            opp = Operator.mul;
+            data01 = Double.parseDouble(resultText.getText().toString());
+
+
+            resultText.setText("");
 
         } else if (pressID == R.id.buttonDiv) {
 
@@ -108,19 +119,48 @@ public class MainActivity extends AppCompatActivity {
 
             } else {
 
-                data02 = data02 / data01;
+                opp = Operator.div;
+                data01 = Double.parseDouble(resultText.getText().toString());
+
+
+                resultText.setText("");
 
             }
 
 
         } else if (pressID == R.id.buttonEq) {
 
-            resultText.setText(data02 + "");
+            data02 = Double.parseDouble(resultText.getText().toString());
+
+            if (opp == Operator.add) {
+
+                resultText.setText(data01 + data02 + "");
+
+            } else if (opp == Operator.sub) {
+
+                resultText.setText(data01 - data02 + "");
+
+            } else if (opp == Operator.div) {
+
+                if (data01 == 0) {
+
+                    resultText.setText("ERROR");
+
+                } else {
+
+                    resultText.setText(data01 / data02 + "");
+                }
+
+            } else if (opp == Operator.mul) {
+
+                resultText.setText(data01 * data02 + "");
+            }
+
+
         }
 
 
     }
-
 
 }
 
