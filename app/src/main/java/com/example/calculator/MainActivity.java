@@ -112,7 +112,7 @@ public class MainActivity extends AppCompatActivity {
             }
 
 
-        } else {
+        } else if (opp == Operator.eq) {
 
             resultText.setText(data02 + "");
         }
