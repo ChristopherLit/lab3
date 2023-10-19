@@ -13,7 +13,7 @@ public class MainActivity extends AppCompatActivity {
 
     private enum Operator {none, add, sub, mul, div, eq}
 
-    private double data01 = 1, data02 = 0;
+    private double data01 = 0, data02 = 0;
 
     private Operator opp = Operator.none;
 
@@ -113,19 +113,11 @@ public class MainActivity extends AppCompatActivity {
 
         } else if (pressID == R.id.buttonDiv) {
 
-            if (data01 == 0) {
-
-                resultText.setText("ERROR");
-
-            } else {
-
                 opp = Operator.div;
                 data01 = Double.parseDouble(resultText.getText().toString());
-
-
+                
                 resultText.setText("");
 
-            }
 
 
         } else if (pressID == R.id.buttonEq) {
