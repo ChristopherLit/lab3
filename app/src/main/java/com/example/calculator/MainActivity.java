@@ -85,9 +85,8 @@ public class MainActivity extends AppCompatActivity {
 
     public void onClickFunctionButton(View view) {
 
-
         int pressID = view.getId();
-        //none, add, sub, mul, div, eq
+
         if (pressID == R.id.buttonPlus) {
 
             opp = Operator.add;
@@ -108,17 +107,14 @@ public class MainActivity extends AppCompatActivity {
             opp = Operator.mul;
             data01 = Double.parseDouble(resultText.getText().toString());
 
-
             resultText.setText("");
 
         } else if (pressID == R.id.buttonDiv) {
 
-                opp = Operator.div;
-                data01 = Double.parseDouble(resultText.getText().toString());
-                
-                resultText.setText("");
+            opp = Operator.div;
+            data01 = Double.parseDouble(resultText.getText().toString());
 
-
+            resultText.setText("");
 
         } else if (pressID == R.id.buttonEq) {
 
