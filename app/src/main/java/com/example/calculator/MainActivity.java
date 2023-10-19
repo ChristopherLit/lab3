@@ -84,6 +84,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onClickFunctionButton(View view) {
+        Log.d("test", "FUNCTION RUNS, 0");
 
         int pressID = view.getId();
 
@@ -110,9 +111,12 @@ public class MainActivity extends AppCompatActivity {
             resultText.setText("");
 
         } else if (pressID == R.id.buttonDiv) {
+            Log.d("test", "DIVIDE RUNS, 1");
 
             opp = Operator.div;
+            Log.d("test", "DIVIDE RUNS, 2");
             data01 = Double.parseDouble(resultText.getText().toString());
+            Log.d("test", "DIVIDE RUNS, 3");
 
             resultText.setText("");
 
