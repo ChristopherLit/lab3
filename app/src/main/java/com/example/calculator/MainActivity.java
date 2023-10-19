@@ -84,21 +84,28 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onClickFunctionButton(View view) {
-        Log.d("test", "FUNCTION RUNS, 0");
+
 
         int pressID = view.getId();
 
         if (pressID == R.id.buttonPlus) {
 
             opp = Operator.add;
-            data01 = Double.parseDouble(resultText.getText().toString());
+
+            if (!(resultText.getText().toString().equals(""))) {
+                data01 = Double.parseDouble(resultText.getText().toString());
+
+            }
 
             resultText.setText("");
+
 
         } else if (pressID == R.id.buttonMinus) {
 
             opp = Operator.sub;
-            data01 = Double.parseDouble(resultText.getText().toString());
+            if (!(resultText.getText().toString().equals(""))) {
+                data01 = Double.parseDouble(resultText.getText().toString());
+            }
 
 
             resultText.setText("");
@@ -106,23 +113,27 @@ public class MainActivity extends AppCompatActivity {
         } else if (pressID == R.id.buttonMul) {
 
             opp = Operator.mul;
-            data01 = Double.parseDouble(resultText.getText().toString());
+            if (!(resultText.getText().toString().equals(""))) {
+                data01 = Double.parseDouble(resultText.getText().toString());
+            }
 
             resultText.setText("");
 
         } else if (pressID == R.id.buttonDiv) {
-            Log.d("test", "DIVIDE RUNS, 1");
 
             opp = Operator.div;
-            Log.d("test", "DIVIDE RUNS, 2");
-            data01 = Double.parseDouble(resultText.getText().toString());
-            Log.d("test", "DIVIDE RUNS, 3");
+            if (!(resultText.getText().toString().equals(""))) {
+                data01 = Double.parseDouble(resultText.getText().toString());
+            }
 
             resultText.setText("");
 
         } else if (pressID == R.id.buttonEq) {
 
-            data02 = Double.parseDouble(resultText.getText().toString());
+            if (!(resultText.getText().toString().equals(""))) {
+
+                data02 = Double.parseDouble(resultText.getText().toString());
+            }
 
             if (opp == Operator.add) {
 
